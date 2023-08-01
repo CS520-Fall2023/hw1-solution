@@ -2,16 +2,28 @@
 
 The homework will be based on this project named "Expense Tracker",where users will be able to add/remove daily transaction. 
 
-## Compile
+## How to build and test (from Terminal):
+1. Make sure that you have Apache Ant installed.
 
-To compile the code from terminal, use the following command:
-```
-cd src
-javac ExpenseTrackerApp.java
-java ExpenseTracker
-```
+2. Run ```ant``` in the root directory, which contains the build.xml build file.
 
-You should be able to view the GUI of the project upon successful compilation. 
+3. Compiled java classes will be in the bin directory.
 
-## Java Version
-This code is compiled with ```openjdk 17.0.7 2023-04-18```. Please update your JDK accordingly if you face any incompatibility issue.
+4. Run ```ant test``` to run all unit tests.
+
+## How to run (from Terminal):
+After building the project (i.e., running ant), run: ```java -cp bin ExpenseTrackerApp```
+
+## How to clean up (from Terminal):
+Run ```ant clean``` to clean the project (i.e., delete all generated files).
+
+## Code Modification
+
+Create a file named ```InputValidation.java```  to validate the ```amount``` and ```category``` field of this app. Some hints are as follows:
+1. The ```amount``` should be greater than 0 and less than 1000. 
+2. It should be a valid number. 
+3. The ```category``` should be a valid string input from the following list: "food", "travel", "bills", "entertainment", "other" . 
+
+
+## solution
+1. Check the ```InputValidation.java``` for possible answers on code modification. 
