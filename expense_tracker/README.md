@@ -27,3 +27,33 @@ Create a file named ```InputValidation.java```  to validate the ```amount``` and
 
 ## solution
 1. Check the ```InputValidation.java``` for possible answers on code modification. 
+
+## Manual Review
+
+### Two Examples of Satisfying Non-Functional Requirements
+1. Performance: Efficient update of table view in the ```refreshTable``` method of the ```ExpenseTrackerView.java```. 
+2. Usability: Enhancement of usability by the GUI. 
+
+### Two examples of violated non-functional requirement
+1. Security: No data encapsulation is implemented to protect transaction data. 
+2. Error Handling: The code lacks proper data handling mechanisms. 
+3. Modularity: The code does not demonstrate a high level of modularity. in the ```ExpenseTrackerView.java```, there is a mix of view-related code and controller-related code. 
+4. Testability: The code does not facilitate any teting. In the ```ExpenseTrackerApp``` class, the main method directly creates instances of the ```ExpenseTrackerView``` and sets it as visible. This makes it difficult to write unit tests for the application logic, as it tightly couples the view and controller. 
+
+## Modularity 
+
+1. Component A: View. 
+This component is part of the view. It is responsible for displaying the input fields for the amount and category.
+2. Component B: View
+This component is also part of the view.It is responsible for displaying the transactions.
+3. Component C: Both View and Controller
+This component is part of both the view and the controller. It is responsible for triggering the addition of a new transaction. It interacts with the view by displaying the button, and it interacts with the controller by triggering the addition of a new transaction when clicked.
+
+### Identify application source code
+
+1. Model: 
+The Transaction.java file represents the model component. It defines the Transaction class, which encapsulates the data related to a transaction, including the amount, category, and timestamp.
+2. View: 
+The ExpenseTrackerView.java file represents the view component. It extends the JFrame class and creates a graphical user interface (GUI) for the expense tracker application. It includes UI components such as buttons, text fields, and a table for displaying transactions.
+3. Controller:
+The ExpenseTrackerApp.java file represents the controller component. It acts as the entry point for the application and handles the interaction between the view and the model. It creates instances of the view and model, sets up event listeners, and performs actions based on user input.
