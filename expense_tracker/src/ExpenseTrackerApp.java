@@ -7,6 +7,7 @@ public class ExpenseTrackerApp {
     
     // Create MVC components
     DefaultTableModel tableModel = new DefaultTableModel();
+    tableModel.addColumn("Serial");
     tableModel.addColumn("Amount");
     tableModel.addColumn("Category");
     tableModel.addColumn("Date");
@@ -18,6 +19,7 @@ public class ExpenseTrackerApp {
     // Handle add transaction button clicks
     view.getAddTransactionBtn().addActionListener(e -> {
       // Get transaction data from view
+      //validation specification 
       if(!InputValidation.isValidAmount(view.getAmountField())){
         System.out.println("Invalid amount entered");
          JOptionPane.showMessageDialog(view, "Invalid amount entered");
