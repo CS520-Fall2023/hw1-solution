@@ -42,6 +42,8 @@ Create a file named ```InputValidation.java```  to validate the ```amount``` and
 
 ## Modularity 
 
+![UI Components](ui_components.png)
+
 1. Component A: View. 
 This component is part of the view. It is responsible for displaying the input fields for the amount and category.
 2. Component B: View
