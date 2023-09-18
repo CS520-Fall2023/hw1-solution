@@ -33,6 +33,7 @@ Create a file named ```InputValidation.java```  to validate the ```amount``` and
 ### Two Examples of Satisfying Non-Functional Requirements
 1. Performance: Efficient update of table view in the ```refreshTable``` method of the ```ExpenseTrackerView.java```. 
 2. Usability: Enhancement of usability by the GUI. 
+3. Debuggability :The app is under version control. If a bug report is made about a particular version, it is possible to access that version and use debugging techniques to localize the cause of that bug in the version.
 
 ### Two examples of violated non-functional requirement
 1. Security: No data encapsulation is implemented to protect transaction data. 
