@@ -30,33 +30,36 @@ Create a file named ```InputValidation.java```  to validate the ```amount``` and
 
 ## Manual Review
 
-### Two Examples of Satisfying Non-Functional Requirements
-1. Performance: Efficient update of table view in the ```refreshTable``` method of the ```ExpenseTrackerView.java```. 
-2. Usability: Enhancement of usability by the GUI. 
-3. Debuggability :The app is under version control. If a bug report is made about a particular version, it is possible to access that version and use debugging techniques to localize the cause of that bug in the version.
+### Some Examples of Satisfying Non-Functional Requirements
+1. Usability: Enhancement of usability by the GUI. Generally using UI widgets in expected ways. 
+2. Debuggability :The app is under version control. If a bug report is made about a particular version, it is possible to access that version and use debugging techniques to localize the cause of that bug in the version.
+3. Understandability: Naming conventions are being used to improve program understanding.
+4. Testability: There exists a unit test suite.
+5. ...
 
-### Two examples of violated non-functional requirement
-1. Security: No data encapsulation is implemented to protect transaction data. 
-2. Error Handling: The code lacks proper data handling mechanisms. 
-3. Modularity: The code does not demonstrate a high level of modularity. in the ```ExpenseTrackerView.java```, there is a mix of view-related code and controller-related code. 
-4. Testability: The code does not facilitate any teting. In the ```ExpenseTrackerApp``` class, the main method directly creates instances of the ```ExpenseTrackerView``` and sets it as visible. This makes it difficult to write unit tests for the application logic, as it tightly couples the view and controller. 
+### Other examples of violated non-functional requirement
+1. Security (or Modularity): No data encapsulation is implemented to protect transaction data. 
+2. Debuggability (or Usability): The code generally lacks proper data error handling mechanisms. The InputValidation class now provides some data error handling.
+3. Modularity: The code does not demonstrate a high level of modularity. in the ```ExpenseTrackerView.java```, there is a mix of view-related code and controller-related code. Could apply the MVC pattern as described in the MVC section.
+4. Testability: The code often does not facilitate testing. In the ```ExpenseTrackerApp``` class, the main method directly creates instances of the ```ExpenseTrackerView``` and sets it as visible. This makes it difficult to write unit tests for the application logic, as it tightly couples the view and controller. Additionally the unit test suite does not seem adequate (i.e. too few test cases).
+5. ...
 
 ## Modularity 
 
 ![UI Components](ui_components.png)
 
 1. Component A: View. 
-This component is part of the view. It is responsible for displaying the input fields for the amount and category.
+This component is part of the view. It is responsible for displaying a new transition (i.e. the input fields for the amount and category).
 2. Component B: View
-This component is also part of the view.It is responsible for displaying the transactions.
-3. Component C: Both View and Controller
-This component is part of both the view and the controller. It is responsible for triggering the addition of a new transaction. It interacts with the view by displaying the button, and it interacts with the controller by triggering the addition of a new transaction when clicked.
+This component is also part of the view. It is responsible for displaying the list of existing transactions (i.e. the table).
+3. Component C: Controller
+This component is part of the controller. It is responsible for triggering the addition of a new transaction when clicked (i.e. button).
 
 ### Identify application source code
 
 1. Model: 
-The Transaction.java file represents the model component. It defines the Transaction class, which encapsulates the data related to a transaction, including the amount, category, and timestamp.
+The Transaction.java file represents part of the model component. It defines the Transaction class, which encapsulates the data related to a transaction, including the amount, category, and timestamp. In the ExpenseTrackerView.java file, it defines another part of the model component (as a list of transactions).
 2. View: 
-The ExpenseTrackerView.java file represents the view component. It extends the JFrame class and creates a graphical user interface (GUI) for the expense tracker application. It includes UI components such as buttons, text fields, and a table for displaying transactions.
+The ExpenseTrackerView.java file represents the view component. It extends the JFrame class and creates a graphical user interface (GUI) for the expense tracker application. It includes UI components such as text fields and a table for displaying transactions.
 3. Controller:
-The ExpenseTrackerApp.java file represents the controller component. It acts as the entry point for the application and handles the interaction between the view and the model. It creates instances of the view and model, sets up event listeners, and performs actions based on user input.
+The ExpenseTrackerApp.java file represents the controller component. It acts as the entry point for the application and handles the interaction between the view and model. The ExpenseTrackerView.java file also represents the controller component. It sets up event listeners (related to Component C above), and performs actions based on its user input.
