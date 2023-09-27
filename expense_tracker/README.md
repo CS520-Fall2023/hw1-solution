@@ -21,12 +21,12 @@ Run ```ant clean``` to clean the project (i.e., delete all generated files).
 
 Create a file named ```InputValidation.java```  to validate the ```amount``` and ```category``` field of this app. Some hints are as follows:
 1. The ```amount``` should be greater than 0 and less than 1000. 
-2. It should be a valid number. 
+2. It should be a valid number. (The original code already implemented this check.)
 3. The ```category``` should be a valid string input from the following list: "food", "travel", "bills", "entertainment", "other" . 
 
 
 ## solution
-1. Check the ```InputValidation.java``` for possible answers on code modification. 
+1. See the ```InputValidation.java``` for possible answers on code modification. In your answer, we looked for both logic to check error handling (by either returning error codes or throwing exceptions) as well as displaying any errors to the user (on the commandline UI, graphical UI, or both). Our answer is returning error codes and displaying an error dialog box when appropriate.
 
 ## Manual Review
 
