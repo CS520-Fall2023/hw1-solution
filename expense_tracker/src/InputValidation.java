@@ -1,6 +1,16 @@
 import java.util.Arrays;
 
+/**
+ * Represents a class that validates user input.
+ * e.g. amount and category
+ */
+
 public class InputValidation {
+
+  /**
+   * @param amount the amount to validate
+   * @return true if the amount is valid, false otherwise
+   */
 
   public static boolean isValidAmount(double amount) {
     
@@ -18,6 +28,11 @@ public class InputValidation {
   }
 
   public static boolean isValidCategory(String category) {
+    /*
+     * Valid categories are:"food", "travel", "bills", "entertainment", "other"
+     * check if the category is null
+     * return false if the category is null
+     */
 
     if(category == null) {
       return false; 
